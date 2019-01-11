@@ -88,8 +88,7 @@ export default function SignUp() {
 						padding: "4rem 4rem 3rem 4rem",
 						borderRadius: "2.5rem",
 						boxShadow: "0px 0px 40px #ddd",
-						marginLeft: "5rem",
-						marginTop: "-5rem"
+						marginLeft: "5rem"
 					}}
 				>
 					<label htmlFor="email">Email</label>
