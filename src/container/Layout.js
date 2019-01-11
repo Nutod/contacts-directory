@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Box } from "grommet";
 import styled from "styled-components";
-// import { Button } from "./components/elements/Button/Button";
 import Background from "../components/elements/Background/Background";
 import Eclipse from "../assets/icons/eclipse-bg.svg";
 import Contact from "../assets/icons/contacts.svg";
@@ -15,13 +14,24 @@ const ToolBar = props => (
 		align="center"
 		justify="between"
 		pad={{ left: "medium", right: "small", vertical: "small" }}
-		elevation="medium"
-		style={{ zIndex: "1" }}
 		{...props}
+		style={{ zIndex: 5 }}
 	/>
 );
 
-const Container = styled.div``;
+const Backdrop = styled.div`
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+`;
+
+const Container = styled.div`
+	position: relative;
+	height: 100vh;
+`;
 
 export default class Layout extends Component {
 	render() {
@@ -31,9 +41,22 @@ export default class Layout extends Component {
 					<Logo />
 					<Navigation />
 				</ToolBar>
-				<Background />
-				<img src={Eclipse} alt="bg" />
-				<img src={Contact} alt="bg" style={{ width: "5rem" }} />
+				<Backdrop>
+					<Background />
+				</Backdrop>
+				<Backdrop>
+					<img
+						src={Eclipse}
+						alt="bg"
+						style={{
+							width: "120rem",
+							position: "absolute",
+							top: "0",
+							left: "-30rem"
+						}}
+					/>
+				</Backdrop>
+				{/* <img src={Contact} alt="bg" style={{ width: "5rem" }} /> */}
 			</Container>
 		);
 	}
