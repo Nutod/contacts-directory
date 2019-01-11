@@ -6,6 +6,7 @@ const ListItem = styled.li`
 	margin-right: 2rem;
 	padding: 1rem;
 	cursor: pointer;
+	transition: all 0.2s;
 
 	&:hover {
 		color: crimson;
