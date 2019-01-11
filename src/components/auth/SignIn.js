@@ -100,10 +100,14 @@ export default function SignUp() {
 
 					<div style={{ textAlign: "center" }}>
 						<TermsAndAgreementParagraph>
-							Forgot your Password? Reset it here
+							Forgot your Password?{" "}
+							<span style={{ color: `${theme.brand}` }}>Reset it here</span>
 						</TermsAndAgreementParagraph>
 						<Button>Login</Button>
-						<LoginParagraph>Don't have an accout? Get Started</LoginParagraph>
+						<LoginParagraph>
+							Don't have an accout?{" "}
+							<span style={{ color: `${theme.brand}` }}>Get Started</span>
+						</LoginParagraph>
 					</div>
 				</Form>
 				<div

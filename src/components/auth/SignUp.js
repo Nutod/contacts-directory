@@ -106,11 +106,18 @@ export default function SignUp() {
 					<input type="password" placeholder="Re-type Password" />
 					<div style={{ textAlign: "center" }}>
 						<TermsAndAgreementParagraph>
-							By Signing Up, you agree to our Terms & Conditions and read our
-							Privacy Policy
+							By Signing Up, you agree to our
+							<span style={{ color: `${theme.brand}` }}>
+								Terms & Condition
+							</span>{" "}
+							and read our
+							<span style={{ color: `${theme.brand}` }}>Privacy Policy</span>
 						</TermsAndAgreementParagraph>
 						<Button>Get Started</Button>
-						<LoginParagraph>Already have an Account? Login</LoginParagraph>
+						<LoginParagraph>
+							Already have an Account?{" "}
+							<span style={{ color: `${theme.brand}` }}>Login</span>
+						</LoginParagraph>
 					</div>
 				</Form>
 				<div

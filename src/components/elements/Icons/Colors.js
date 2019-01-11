@@ -1,5 +1,5 @@
 export default {
-	brand: "#c0456a",
+	brand: "#e4235d",
 	purple: "#90386b",
 	purpleLight: "#b1367d",
 	lightGreyOne: "#ccc",
