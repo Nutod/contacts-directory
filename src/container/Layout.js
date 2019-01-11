@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Switch, Route } from "react-router-dom";
 import SignUp from "../components/auth/SignUp";
 import SignIn from "../components/auth/SignIn";
 
@@ -13,7 +14,11 @@ export default class Layout extends Component {
 		return (
 			<Container>
 				{/* <SignUp /> */}
-				<SignIn />
+				<Switch>
+					<Route path="/auth/sign-up" component={SignUp} />
+					<Route path="/auth/sign-in" component={SignIn} />
+					<Route path="/" exact component={SignIn} />
+				</Switch>
 			</Container>
 		);
 	}
