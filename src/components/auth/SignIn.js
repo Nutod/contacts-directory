@@ -8,7 +8,11 @@ import Navigation from "../../components/elements/Navigation/Navigation";
 import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
 import theme from "../../components/elements/Icons/Colors";
-import Icons from "../elements/Icons/Icons";
+
+const Container = styled.div`
+	position: relative;
+	height: 100vh;
+`;
 
 const ToolBar = props => (
 	<Box
@@ -61,7 +65,7 @@ const LoginParagraph = styled.p`
 
 export default function SignUp() {
 	return (
-		<>
+		<Container>
 			<ToolBar>
 				<Logo />
 				<Navigation />
@@ -89,7 +93,7 @@ export default function SignUp() {
 						width: "25vw",
 						padding: "4rem 4rem 3rem 4rem",
 						borderRadius: "2.5rem",
-						boxShadow: "0px 0px 40px #ddd",
+						boxShadow: "0px -2px 20px #ccc",
 						marginLeft: "5rem"
 					}}
 				>
@@ -132,10 +136,7 @@ export default function SignUp() {
 						}}
 					/>
 				</div>
-				<Icons label="contact" />
-				<Icons label="edit" />
-				<Icons label="feedback" />
 			</Content>
-		</>
+		</Container>
 	);
 }

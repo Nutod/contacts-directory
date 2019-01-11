@@ -9,6 +9,11 @@ import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
 import theme from "../../components/elements/Icons/Colors";
 
+const Container = styled.div`
+	position: relative;
+	height: 100vh;
+`;
+
 const ToolBar = props => (
 	<Box
 		tag="header"
@@ -60,7 +65,7 @@ const LoginParagraph = styled.p`
 
 export default function SignUp() {
 	return (
-		<>
+		<Container>
 			<ToolBar>
 				<Logo />
 				<Navigation />
@@ -88,7 +93,7 @@ export default function SignUp() {
 						width: "25vw",
 						padding: "4rem 4rem 3rem 4rem",
 						borderRadius: "2.5rem",
-						boxShadow: "0px 0px 40px #ddd",
+						boxShadow: "0px -2px 20px #ddd",
 						marginLeft: "5rem",
 						marginTop: "-5rem"
 					}}
@@ -143,6 +148,6 @@ export default function SignUp() {
 					/>
 				</div>
 			</Content>
-		</>
+		</Container>
 	);
 }
