@@ -3,7 +3,7 @@ import theme from "../Icons/Colors";
 
 export const Button = styled.button`
 	all: unset;
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
 	text-align: center;
 	width: 10rem;
 	color: #fff;

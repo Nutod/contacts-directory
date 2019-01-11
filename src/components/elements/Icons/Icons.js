@@ -11,7 +11,7 @@ import DropDown from "../../../assets/icons/ic-arrow-drop-down-36px.svg";
 import Photo from "../../../assets/icons/icon-add-a-photo.svg";
 
 const Image = styled.img`
-	width: 2.5rem;
+	width: 1.8rem;
 `;
 
 export default class Icons extends Component {
