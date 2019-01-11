@@ -8,6 +8,7 @@ import Navigation from "../../components/elements/Navigation/Navigation";
 import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
 import theme from "../../components/elements/Icons/Colors";
+import Icons from "../elements/Icons/Icons";
 
 const ToolBar = props => (
 	<Box
@@ -127,6 +128,7 @@ export default function SignUp() {
 						}}
 					/>
 				</div>
+				<Icons label="contact" />
 			</Content>
 		</>
 	);
