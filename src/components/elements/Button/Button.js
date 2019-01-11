@@ -19,4 +19,9 @@ export const Button = styled.button`
 		transform: translateY(-0.1rem);
 		box-shadow: 0 10px 20px ${theme.lightGreyOne};
 	}
+
+	&:active {
+		transform: translateY(0);
+		box-shadow: 0 5px 10px ${theme.lightGreyOne};
+	}
 `;
