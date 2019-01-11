@@ -4,15 +4,16 @@ import NavigationItem from "./NavigationItem/NavigationItem";
 
 const NavContainer = styled.ul`
 	display: flex;
-	margin: 4rem;
+	margin: 2rem 12rem 4rem 4rem;
 `;
 
 export default function Navigation() {
 	return (
 		<NavContainer>
-			<NavigationItem />
-			<NavigationItem />
-			<NavigationItem />
+			<NavigationItem>Home</NavigationItem>
+			<NavigationItem>About</NavigationItem>
+			<NavigationItem>Pricing</NavigationItem>
+			<NavigationItem>Contact Us</NavigationItem>
 		</NavContainer>
 	);
 }

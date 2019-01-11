@@ -1,5 +1,23 @@
-import React from "react";
+import styled from "styled-components";
 
-export default function Form() {
-	return <form />;
-}
+export const Form = styled.form`
+	& > * {
+		display: block;
+		font-family: inherit;
+	}
+
+	label {
+		color: #ccc;
+		font-size: 1rem;
+	}
+
+	input {
+		border: none;
+		border-bottom: 1px solid #eee;
+		outline: none;
+		background: transparent;
+		font-size: 1.8rem;
+		width: 26rem;
+		margin-bottom: 2rem;
+	}
+`;

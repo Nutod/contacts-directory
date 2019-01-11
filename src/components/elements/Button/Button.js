@@ -8,4 +8,5 @@ export const Button = styled.button`
 	color: #fff;
 	background: crimson;
 	border-radius: 3rem;
+	cursor: pointer;
 `;

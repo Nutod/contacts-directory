@@ -3,9 +3,11 @@ import { Box } from "grommet";
 import styled from "styled-components";
 import Background from "../components/elements/Background/Background";
 import Eclipse from "../assets/icons/eclipse-bg.svg";
-import Contact from "../assets/icons/contacts.svg";
 import Logo from "../components/elements/Logo/Logo";
 import Navigation from "../components/elements/Navigation/Navigation";
+import { Form } from "../components/elements/Form/Form";
+import { Button } from "../components/elements/Button/Button";
+import SignUp from "../components/auth/SignUp";
 
 const ToolBar = props => (
 	<Box
@@ -16,6 +18,18 @@ const ToolBar = props => (
 		pad={{ left: "medium", right: "small", vertical: "small" }}
 		{...props}
 		style={{ zIndex: 5 }}
+	/>
+);
+
+const Content = props => (
+	<Box
+		tag="content"
+		direction="row"
+		align="center"
+		justify="between"
+		pad={{ left: "medium", right: "small", vertical: "small" }}
+		{...props}
+		style={{ zIndex: 4, margin: "0rem 12rem" }}
 	/>
 );
 
@@ -33,30 +47,27 @@ const Container = styled.div`
 	height: 100vh;
 `;
 
+const HeadingOne = styled.h1`
+	font-size: 8rem;
+	margin: 4rem 0;
+`;
+
+const TermsAndAgreementParagraph = styled.p`
+	font-size: 1rem;
+	line-height: 1.5;
+	margin-bottom: 2rem;
+`;
+
+const LoginParagraph = styled.p`
+	font-size: 1rem;
+	color: #bbb;
+`;
+
 export default class Layout extends Component {
 	render() {
 		return (
 			<Container>
-				<ToolBar>
-					<Logo />
-					<Navigation />
-				</ToolBar>
-				<Backdrop>
-					<Background />
-				</Backdrop>
-				<Backdrop>
-					<img
-						src={Eclipse}
-						alt="bg"
-						style={{
-							width: "120rem",
-							position: "absolute",
-							top: "0",
-							left: "-30rem"
-						}}
-					/>
-				</Backdrop>
-				{/* <img src={Contact} alt="bg" style={{ width: "5rem" }} /> */}
+				<SignUp />
 			</Container>
 		);
 	}
