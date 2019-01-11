@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="17432 -4821 28 28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #d54a69;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Menu" transform="translate(17435 -4818)">
+    <rect id="Rectangle_1104" data-name="Rectangle 1104" class="cls-1" width="28" height="28" transform="translate(-3 -3)"/>
+    <line id="Line_16" data-name="Line 16" class="cls-2" x2="15.037" transform="translate(3 11)"/>
+    <line id="Line_17" data-name="Line 17" class="cls-2" x2="15.037" transform="translate(3 6)"/>
+    <line id="Line_18" data-name="Line 18" class="cls-2" x2="15.037" transform="translate(3 16)"/>
+  </g>
+</svg>
