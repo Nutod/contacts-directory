@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "circular-std";
 import Logo from "./components/elements/Logo/Logo";
 import Navigation from "./components/elements/Navigation/Navigation";
-import Button from "./components/elements/Button/Button";
+import { Button } from "./components/elements/Button/Button";
 
 class App extends Component {
 	render() {
@@ -12,7 +12,7 @@ class App extends Component {
 				<p>Paragraph text</p>
 				<Logo />
 				<Navigation />
-				<Button />
+				<Button>Get Started</Button>
 			</div>
 		);
 	}
