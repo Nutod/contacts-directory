@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../Icons/Colors";
 
 export const Button = styled.button`
 	all: unset;
@@ -6,7 +7,7 @@ export const Button = styled.button`
 	text-align: center;
 	width: 10rem;
 	color: #fff;
-	background: crimson;
+	background: ${theme.brand};
 	border-radius: 3rem;
 	cursor: pointer;
 `;
