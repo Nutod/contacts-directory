@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "circular-std";
 
 class App extends Component {
 	render() {

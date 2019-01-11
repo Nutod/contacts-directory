@@ -4,19 +4,13 @@
   box-sizing: inherit;
 }
 
-@font-face {
-  font-family: "Circular";
-  src: url('/public/assets/fonts/CircularStd-Medium.woff') format(woff);
-  font-weight: normal;
-}
-
 html {
   box-sizing: border-box;
   font-size: 10px;
 }
 
 body {
-  font-family: 'Circular';
+  font-family: 'CircularStd';
   margin: 0;
   padding: 0;
   font-size: 1.5rem;
