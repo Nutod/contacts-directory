@@ -7,7 +7,7 @@ export const Button = styled.button`
 	text-align: center;
 	width: 10rem;
 	color: #fff;
-	background: ${theme.brand};
+	background: linear-gradient(to right, ${theme.brand}, ${theme.purpleLight});
 	border-radius: 3rem;
 	cursor: pointer;
 `;

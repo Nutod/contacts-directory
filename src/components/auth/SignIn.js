@@ -129,6 +129,8 @@ export default function SignUp() {
 					/>
 				</div>
 				<Icons label="contact" />
+				<Icons label="edit" />
+				<Icons label="feedback" />
 			</Content>
 		</>
 	);
