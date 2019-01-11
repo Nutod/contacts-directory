@@ -7,6 +7,7 @@ import Logo from "../../components/elements/Logo/Logo";
 import Navigation from "../../components/elements/Navigation/Navigation";
 import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
+import theme from "../../components/elements/Icons/Colors";
 
 const ToolBar = props => (
 	<Box
@@ -122,7 +123,7 @@ export default function SignUp() {
 							height: "1rem",
 							border: "none",
 							borderRadius: "1rem",
-							background: "crimson"
+							background: theme.brand
 						}}
 					/>
 				</div>
