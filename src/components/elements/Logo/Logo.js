@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const Image = styled.img`
 	width: 8rem;
+	margin: 4rem;
 `;
 
 export default function Logo() {
