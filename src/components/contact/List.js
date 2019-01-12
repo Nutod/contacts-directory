@@ -25,7 +25,7 @@ const UserImageSecondary = styled(UserImage)`
 `;
 
 // TODO: Change the Paragraph into styled component for responsiveness
-export default function List() {
+export default function List({ name, phone, email }) {
 	return (
 		<ListWrapper>
 			<UserImageWrapperSecondary>
