@@ -5,6 +5,7 @@ import { Card } from "../elements/Card/Card";
 import { CardHeading } from "../profile/Account";
 import Icons from "../elements/Icons/Icons";
 import theme from "../elements/Icons/Colors";
+import List from "./List";
 
 const ContentWrapper = styled(Card)`
 	margin: 3rem;
@@ -53,6 +54,11 @@ const ContactHeaderText = styled(HeadingText)`
 	padding: 5rem;
 `;
 
+const ContactContainer = styled.div`
+	margin-top: -6.5rem;
+	margin-left: 8rem;
+`;
+
 export default function ContactList() {
 	return (
 		<div style={{ display: "flex" }}>
@@ -77,6 +83,12 @@ export default function ContactList() {
 					<ContactHeaderText>Phone Number</ContactHeaderText>
 					<ContactHeaderText>Email</ContactHeaderText>
 				</ContactHeader>
+				<ContactContainer>
+					<List />
+					<List />
+					<List />
+					<List />
+				</ContactContainer>
 			</ContentWrapper>
 		</div>
 	);
