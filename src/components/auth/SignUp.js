@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Box } from "grommet";
 import styled from "styled-components";
 import Background from "../../components/elements/Background/Background";
@@ -8,6 +8,7 @@ import Navigation from "../../components/elements/Navigation/Navigation";
 import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
 import theme from "../../components/elements/Icons/Colors";
+import Input from "../elements/Input/Input";
 
 export const Container = styled.div`
 	position: relative;
@@ -69,92 +70,204 @@ export const BrandText = styled.span`
 `;
 
 // TODO: Convert to class component
-export default function SignUp() {
-	return (
-		<Container>
-			<ToolBar>
-				<Logo />
-				<Navigation />
-			</ToolBar>
-			<Backdrop>
-				<Background />
-			</Backdrop>
-			<Backdrop>
-				<img
-					src={Eclipse}
-					alt="bg"
-					style={{
-						width: "140rem",
-						position: "absolute",
-						top: "0",
-						left: "-50rem"
-					}}
-				/>
-			</Backdrop>
-			<Content>
-				<Form
-					onSubmit={event => event.preventDefault()}
-					style={{
-						background: "#fff",
-						width: "25vw",
-						padding: "4rem 4rem 3rem 4rem",
-						borderRadius: "2.5rem",
-						boxShadow: "0px -2px 20px #ddd",
-						marginLeft: "5rem",
-						marginTop: "-5rem"
-					}}
-				>
-					<label htmlFor="fullname">Fullname</label>
-					<input type="text" />
-					<label htmlFor="username">Username</label>
-					<input type="text" />
-					<label htmlFor="email">Email</label>
-					<input type="email" />
-					<label htmlFor="password">Password</label>
-					<input type="password" />
+export default class SignUp extends Component {
+	state = {
+		signUpForm: {
+			fullname: {
+				elementconfig: {
+					type: "text",
+					placeholder: ""
+				},
+				value: "",
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
+			},
+			username: {
+				elementconfig: {
+					type: "text",
+					placeholder: ""
+				},
+				value: "",
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
+			},
+			email: {
+				elementconfig: {
+					type: "email",
+					placeholder: ""
+				},
+				value: "",
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
+			},
+			password: {
+				elementconfig: {
+					type: "password",
+					placeholder: ""
+				},
+				value: "",
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
+			}
+		},
+		formIsValid: false,
+		loading: false
+	};
 
-					{/* Add Placeholder style here */}
-					<input type="password" placeholder="Re-type Password" />
-					<div style={{ textAlign: "center" }}>
-						<TermsAndAgreementParagraph>
-							By Signing Up, you agree to our
-							<span style={{ color: `${theme.brand}` }}>
-								Terms & Condition
-							</span>{" "}
-							and read our
-							<span style={{ color: `${theme.brand}` }}>Privacy Policy</span>
-						</TermsAndAgreementParagraph>
-						<Button>Get Started</Button>
-						<LoginParagraph>
-							Already have an Account?{" "}
-							<span style={{ color: `${theme.brand}` }}>Login</span>
-						</LoginParagraph>
-					</div>
-				</Form>
-				<div
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "flex-end"
-					}}
-				>
-					<HeadingOne>Be More.</HeadingOne>
-					<p style={{ width: "25rem", textAlign: "right" }}>
-						All your contacts from all your accounts{" "}
-						<BrandText>In One Place</BrandText>
-					</p>
-					<hr
+	signUpFormHandler = event => {
+		event.preventDefault();
+		this.setState({ loading: true });
+
+		const formData = {};
+		for (let formElementIdentifier in this.state.signUpForm) {
+			formData[formElementIdentifier] = this.state.signUpForm[
+				formElementIdentifier
+			].value;
+		}
+	};
+
+	inputChangeHandler = (event, inputIdentifier) => {
+		const signUpForm = { ...this.state.signUpForm };
+		const formElement = { ...signUpForm[inputIdentifier] };
+		formElement.value = event.target.value;
+
+		// Validity here
+
+		formElement.touched = true;
+		signUpForm[inputIdentifier] = formElement;
+
+		// Switched Logic
+		// let formIsValid = true;
+		// for (let inputIdentifiers in signUpForm) {
+		// 	formIsValid = signUpForm[inputIdentifiers].valid && formIsValid;
+		// }
+
+		console.log(this.state, formElement);
+		this.setState({ signUpForm });
+	};
+
+	render() {
+		const formElementsArray = [];
+		for (let key in this.state.signUpForm) {
+			formElementsArray.push({
+				id: key,
+				config: this.state.signUpForm[key]
+			});
+		}
+
+		return (
+			<Container>
+				<ToolBar>
+					<Logo />
+					<Navigation />
+				</ToolBar>
+				<Backdrop>
+					<Background />
+				</Backdrop>
+				<Backdrop>
+					<img
+						src={Eclipse}
+						alt="bg"
 						style={{
-							width: "25rem",
-							margin: "0",
-							height: "1rem",
-							border: "none",
-							borderRadius: "1rem",
-							background: theme.brand
+							width: "140rem",
+							position: "absolute",
+							top: "0",
+							left: "-50rem"
 						}}
 					/>
-				</div>
-			</Content>
-		</Container>
-	);
+				</Backdrop>
+				<Content>
+					<Form
+						onSubmit={event => event.preventDefault()}
+						style={{
+							background: "#fff",
+							width: "25vw",
+							padding: "4rem 4rem 3rem 4rem",
+							borderRadius: "2.5rem",
+							boxShadow: "0px -2px 20px #ddd",
+							marginLeft: "5rem",
+							marginTop: "-5rem"
+						}}
+					>
+						{formElementsArray.map(formElement => (
+							<div key={formElement.id}>
+								<label htmlFor={formElement.id}>{formElement.id}</label>
+								<Input
+									elementtype={formElement.config.elementtype}
+									elementconfig={formElement.config.elementconfig}
+									value={formElement.config.value}
+									invalid={!formElement.config.valid}
+									touched={formElement.config.touched}
+									change={event =>
+										this.inputChangeHandler(event, formElement.id)
+									}
+								/>
+							</div>
+						))}
+						{/* <label htmlFor="fullname">Fullname</label>
+						<Input type="text" />
+						<label htmlFor="username">Username</label>
+						<Input type="text" />
+						<label htmlFor="email">Email</label>
+						<Input type="email" />
+						<label htmlFor="password">Password</label>
+						<Input type="password" />
+
+						 Add Placeholder style here 
+						<Input type="password" placeholder="Re-type Password" /> */}
+						<div style={{ textAlign: "center" }}>
+							<TermsAndAgreementParagraph>
+								By Signing Up, you agree to our
+								<span style={{ color: `${theme.brand}` }}>
+									Terms & Condition
+								</span>{" "}
+								and read our
+								<span style={{ color: `${theme.brand}` }}>Privacy Policy</span>
+							</TermsAndAgreementParagraph>
+							<Button>Get Started</Button>
+							<LoginParagraph>
+								Already have an Account?{" "}
+								<span style={{ color: `${theme.brand}` }}>Login</span>
+							</LoginParagraph>
+						</div>
+					</Form>
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-end"
+						}}
+					>
+						<HeadingOne>Be More.</HeadingOne>
+						<p style={{ width: "25rem", textAlign: "right" }}>
+							All your contacts from all your accounts{" "}
+							<BrandText>In One Place</BrandText>
+						</p>
+						<hr
+							style={{
+								width: "25rem",
+								margin: "0",
+								height: "1rem",
+								border: "none",
+								borderRadius: "1rem",
+								background: theme.brand
+							}}
+						/>
+					</div>
+				</Content>
+			</Container>
+		);
+	}
 }

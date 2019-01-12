@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// TODO: Refactor input declaration
 export const Form = styled.form`
 	& > * {
 		display: block;
@@ -18,6 +19,6 @@ export const Form = styled.form`
 		background: transparent;
 		font-size: 1.8rem;
 		width: 26rem;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 `;
