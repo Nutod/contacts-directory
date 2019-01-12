@@ -9,12 +9,12 @@ import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
 import theme from "../../components/elements/Icons/Colors";
 
-const Container = styled.div`
+export const Container = styled.div`
 	position: relative;
 	height: 100vh;
 `;
 
-const ToolBar = props => (
+export const ToolBar = props => (
 	<Box
 		tag="header"
 		direction="row"
@@ -26,7 +26,7 @@ const ToolBar = props => (
 	/>
 );
 
-const Content = props => (
+export const Content = props => (
 	<Box
 		tag="content"
 		direction="row"
@@ -38,7 +38,7 @@ const Content = props => (
 	/>
 );
 
-const Backdrop = styled.div`
+export const Backdrop = styled.div`
 	position: absolute;
 	top: 0;
 	z-index: -1;
@@ -47,18 +47,19 @@ const Backdrop = styled.div`
 	width: 100vw;
 `;
 
-const HeadingOne = styled.h1`
+export const HeadingOne = styled.h1`
 	font-size: 8rem;
 	margin: 4rem 0;
+	color: ${theme.purple};
 `;
 
-const TermsAndAgreementParagraph = styled.p`
+export const TermsAndAgreementParagraph = styled.p`
 	font-size: 1rem;
 	line-height: 1.5;
 	margin-bottom: 2rem;
 `;
 
-const LoginParagraph = styled.p`
+export const LoginParagraph = styled.p`
 	font-size: 1rem;
 	color: #bbb;
 `;
