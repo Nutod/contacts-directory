@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import theme from "../../Icons/Colors";
 
 const ListItem = styled.li`
 	list-style: none;
@@ -11,7 +12,7 @@ const ListItem = styled.li`
 	color: #aaaaaa;
 
 	&:hover {
-		color: crimson;
+		color: ${theme.purple};
 	}
 `;
 
