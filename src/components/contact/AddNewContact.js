@@ -5,6 +5,8 @@ import theme from "../elements/Icons/Colors";
 import { Form } from "../elements/Form/Form";
 import { Button } from "../elements/Button/Button";
 
+// TODO: Refactor Component
+
 const Container = styled.div`
 	margin: 7.5rem auto;
 	padding: 5rem;
