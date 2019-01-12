@@ -63,6 +63,7 @@ const SidebarNavItem = styled.div`
 	align-items: center;
 	margin: 1rem;
 	padding: 0.5rem;
+	cursor: pointer;
 `;
 
 const SidebarFooterNavigationWrapper = styled.div`
