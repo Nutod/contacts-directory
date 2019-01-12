@@ -17,12 +17,12 @@ const UserInfoWrapper = styled.div`
 	margin-top: 1rem;
 `;
 
-const UserImageWrapper = styled.div`
+export const UserImageWrapper = styled.div`
 	width: 5rem;
 	margin-right: 1rem;
 `;
 
-const UserImage = styled.img`
+export const UserImage = styled.img`
 	width: 100%;
 	border-radius: 50%;
 	border: 4px solid ${theme.lightGreyThree};

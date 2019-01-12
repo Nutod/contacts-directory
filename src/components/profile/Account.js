@@ -10,9 +10,13 @@ const ContentWrapper = styled.div`
 	grid-template-columns: 2fr 2fr 1.5fr;
 `;
 
-const CardHeading = styled.p`
+export const CardHeading = styled.p`
 	color: #84abf1;
 	font-size: 1.3rem;
+
+	span {
+		color: #ccc;
+	}
 `;
 
 const CardHeadingSecondary = styled(CardHeading)`
@@ -26,7 +30,7 @@ const ListText = styled.p`
 	font-size: 1.2rem;
 `;
 
-const ListTextSecondary = styled(ListText)`
+export const ListTextSecondary = styled(ListText)`
 	color: ${theme.brand};
 `;
 
