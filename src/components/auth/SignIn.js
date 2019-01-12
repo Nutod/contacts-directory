@@ -13,7 +13,8 @@ import {
 	Content,
 	Backdrop,
 	TermsAndAgreementParagraph,
-	LoginParagraph
+	LoginParagraph,
+	BrandText
 } from "./SignUp";
 
 export default function SignUp() {
@@ -76,7 +77,8 @@ export default function SignUp() {
 				>
 					<HeadingOne>Be More.</HeadingOne>
 					<p style={{ width: "25rem", textAlign: "right" }}>
-						All your contacts from all your accounts In One Place
+						All your contacts from all your accounts{" "}
+						<BrandText>In One Place</BrandText>
 					</p>
 					<hr
 						style={{

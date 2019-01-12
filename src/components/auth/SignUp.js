@@ -64,6 +64,10 @@ export const LoginParagraph = styled.p`
 	color: #bbb;
 `;
 
+export const BrandText = styled.span`
+	color: ${theme.brand};
+`;
+
 export default function SignUp() {
 	return (
 		<Container>
@@ -135,7 +139,8 @@ export default function SignUp() {
 				>
 					<HeadingOne>Be More.</HeadingOne>
 					<p style={{ width: "25rem", textAlign: "right" }}>
-						All your contacts from all your accounts In One Place
+						All your contacts from all your accounts{" "}
+						<BrandText>In One Place</BrandText>
 					</p>
 					<hr
 						style={{
