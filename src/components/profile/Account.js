@@ -9,6 +9,11 @@ const ContentWrapper = styled.div`
 	padding: 5rem;
 	display: grid;
 	grid-template-columns: 2fr 2fr 1.5fr;
+	grid-gap: 3rem;
+
+	& > * {
+		justify-self: normal;
+	}
 `;
 
 export const CardHeading = styled.p`

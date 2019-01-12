@@ -68,6 +68,7 @@ export const BrandText = styled.span`
 	color: ${theme.brand};
 `;
 
+// TODO: Convert to class component
 export default function SignUp() {
 	return (
 		<Container>
