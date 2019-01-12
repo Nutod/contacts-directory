@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import asyncComponent from "../HOCs/asyncComponent/asyncComponent";
 
-// TODO: Default should load  Account if authenticated else, redirect to auth page
 // TODO: Change Icons
 // TODO: Add Responsiveness
 
@@ -40,7 +39,7 @@ export default class Layout extends Component {
 				<Route path="/account" component={asyncAccount} />
 				<Route path="/profile" component={asyncProfile} />
 				<Route path="/contact-list" component={asynContactList} />
-				<Route path="/" exact component={asyncSignIn} />
+				<Route path="/" exact component={asyncAccount} />
 			</Switch>
 		);
 	}

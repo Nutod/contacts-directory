@@ -14,6 +14,10 @@ const ListItem = styled.li`
 	&:hover {
 		color: ${theme.purple};
 	}
+
+	@media (max-width: 790px) {
+		padding: 0;
+	}
 `;
 
 // This component will implement links

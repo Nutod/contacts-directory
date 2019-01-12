@@ -8,6 +8,18 @@ const SidebarWrapper = styled.div`
 	width: 20rem;
 	height: 100vh;
 	border-right: 5px solid #eee;
+
+	@media (max-width: 600px) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		border-right: none;
+		height: auto;
+		border-bottom: 2px solid #eee;
+		width: 100%;
+		padding: 0 2rem;
+	}
 `;
 
 const UserInfoWrapper = styled.div`
@@ -15,6 +27,14 @@ const UserInfoWrapper = styled.div`
 	align-items: center;
 	padding: 2rem;
 	margin-top: 1rem;
+
+	@media (max-width: 815px) {
+		flex-direction: column;
+	}
+
+	@media (max-width: 600px) {
+		margin: 0;
+	}
 `;
 
 export const UserImageWrapper = styled.div`
@@ -56,6 +76,10 @@ const SidebarNavigationWrapper = styled.div`
 			color: crimson;
 		}
 	}
+
+	@media (max-width: 600px) {
+		margin-bottom: 0;
+	}
 `;
 
 const SidebarNavItem = styled.div`
@@ -77,6 +101,10 @@ const SidebarFooterNavigationWrapper = styled.div`
 		&:hover {
 			color: crimson;
 		}
+	}
+
+	@media (max-width: 600px) {
+		padding: 0;
 	}
 `;
 

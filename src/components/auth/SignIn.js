@@ -14,7 +14,10 @@ import {
 	Backdrop,
 	TermsAndAgreementParagraph,
 	LoginParagraph,
-	BrandText
+	BrandText,
+	HR,
+	CTAText,
+	CTAWrapper
 } from "./SignUp";
 
 export default function SignUp() {
@@ -40,17 +43,7 @@ export default function SignUp() {
 				/>
 			</Backdrop>
 			<Content>
-				<Form
-					onSubmit={event => event.preventDefault()}
-					style={{
-						background: "#fff",
-						width: "25vw",
-						padding: "4rem 4rem 3rem 4rem",
-						borderRadius: "2.5rem",
-						boxShadow: "0px -2px 20px #ccc",
-						marginLeft: "5rem"
-					}}
-				>
+				<Form onSubmit={event => event.preventDefault()}>
 					<label htmlFor="email">Email</label>
 					<input type="email" />
 					<label htmlFor="password">Password</label>
@@ -68,29 +61,14 @@ export default function SignUp() {
 						</LoginParagraph>
 					</div>
 				</Form>
-				<div
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "flex-end"
-					}}
-				>
+				<CTAWrapper>
 					<HeadingOne>Be More.</HeadingOne>
-					<p style={{ width: "25rem", textAlign: "right" }}>
+					<CTAText>
 						All your contacts from all your accounts{" "}
 						<BrandText>In One Place</BrandText>
-					</p>
-					<hr
-						style={{
-							width: "25rem",
-							margin: "0",
-							height: "1rem",
-							border: "none",
-							borderRadius: "1rem",
-							background: theme.brand
-						}}
-					/>
-				</div>
+					</CTAText>
+					<HR />
+				</CTAWrapper>
 			</Content>
 		</Container>
 	);

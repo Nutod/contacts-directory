@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Icons from "../elements/Icons/Icons";
 import theme from "../elements/Icons/Colors";
-import { Form } from "../elements/Form/Form";
 import { Button } from "../elements/Button/Button";
 
 // TODO: Refactor Component
@@ -13,9 +12,13 @@ const Container = styled.div`
 	box-shadow: 0 0 40px ${theme.lightGreyOne};
 	border-radius: 5px;
 	width: 70rem;
+
+	@media (max-width: 710px) {
+		width: 50rem;
+	}
 `;
 
-const AddNewForm = styled(Form)`
+const AddNewForm = styled.form`
 	& > * {
 		display: inline-block;
 		font-size: 1.2rem;
@@ -24,19 +27,35 @@ const AddNewForm = styled(Form)`
 	input {
 		width: 30rem;
 		margin-bottom: 3.5rem;
+		border: none;
+		border-bottom: 1px solid #eee;
+		outline: none;
+		background: transparent;
+		font-size: 1.8rem;
+		margin-bottom: 2.5rem;
 	}
 
 	input::placeholder {
 		color: ${theme.lightGreyThree};
 		font-size: 1rem;
 	}
+
+	@media (max-width: 710px) {
+		input {
+			width: 20rem;
+		}
+	}
+`;
+
+const AddressInput = styled.input`
+	margin-left: 1rem;
+	width: 52rem;
 `;
 
 export default class AddNewContact extends Component {
 	render() {
 		return (
 			<Container>
-				<Icons label="dropdown" />
 				<Icons label="photo" />
 				<AddNewForm onSubmit={event => event.preventDefault()}>
 					<div
@@ -84,11 +103,7 @@ export default class AddNewContact extends Component {
 					</div>
 					<div>
 						<Icons label="location" />
-						<input
-							type="text"
-							placeholder="Address"
-							style={{ marginLeft: "1rem", width: "52rem" }}
-						/>
+						<AddressInput type="text" placeholder="Address" />
 					</div>
 					<div>
 						<Icons label="suitcase" />

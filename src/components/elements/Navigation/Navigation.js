@@ -5,6 +5,10 @@ import NavigationItem from "./NavigationItem/NavigationItem";
 const NavContainer = styled.ul`
 	display: flex;
 	margin: 2rem 12rem 4rem 4rem;
+
+	@media (max-width: 790px) {
+		margin: 1rem 0 5rem 0;
+	}
 `;
 
 export default function Navigation() {

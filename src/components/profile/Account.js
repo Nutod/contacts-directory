@@ -6,13 +6,17 @@ import { Card } from "../elements/Card/Card";
 import theme from "../elements/Icons/Colors";
 
 const ContentWrapper = styled.div`
-	padding: 5rem;
-	display: grid;
-	grid-template-columns: 2fr 2fr 1.5fr;
-	grid-gap: 3rem;
+	padding: 3rem;
+	display: flex;
 
 	& > * {
-		justify-self: normal;
+		margin-right: 2rem;
+		width: 24rem;
+		margin-bottom: 2rem;
+	}
+
+	@media (max-width: 1060px) {
+		flex-wrap: wrap;
 	}
 `;
 
@@ -40,7 +44,14 @@ export const ListTextSecondary = styled(ListText)`
 	color: ${theme.brand};
 `;
 
-// TODO: Add Redirect Component Here
+const AccountWrapper = styled.div`
+	display: flex;
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+		justify-content: center;
+	}
+`;
 
 export default class Account extends Component {
 	state = {
@@ -58,14 +69,14 @@ export default class Account extends Component {
 	render() {
 		let redirect = null;
 
-		if (!this.state.user) {
-			redirect = <Redirect to="/auth/sign-up" />;
-		}
+		// if (!this.state.user) {
+		// 	redirect = <Redirect to="/auth/sign-up" />;
+		// }
 
 		return (
 			<>
 				{redirect}
-				<div style={{ display: "flex" }}>
+				<AccountWrapper>
 					<Sidebar />
 					<ContentWrapper>
 						<Card style={{ height: "40rem", width: "30rem" }}>
@@ -78,7 +89,7 @@ export default class Account extends Component {
 								<ListText>Import from Whatsapp</ListText>
 							</div>
 						</Card>
-						<Card style={{ height: "20rem", width: "30rem" }}>
+						<Card style={{ height: "20rem" }}>
 							<CardHeadingSecondary>
 								Control how your contacts are organised
 							</CardHeadingSecondary>
@@ -88,14 +99,14 @@ export default class Account extends Component {
 								<ListTextSecondary>Sync Options</ListTextSecondary>
 							</div>
 						</Card>
-						<Card style={{ height: "20rem", width: "30rem" }}>
+						<Card style={{ height: "20rem", margin: 0 }}>
 							<CardHeadingSecondary>Manage Profile</CardHeadingSecondary>
 							<div style={{ padding: "0 2rem" }}>
 								<ListTextSecondary>Edit Profile</ListTextSecondary>
 							</div>
 						</Card>
 					</ContentWrapper>
-				</div>
+				</AccountWrapper>
 			</>
 		);
 	}

@@ -7,12 +7,12 @@ const InputItem = styled.input`
 	outline: none;
 	background: transparent;
 	font-size: 1.8rem;
-	width: 26rem;
+	width: 6vw;
 	margin-bottom: 1rem;
 `;
 
 const InvalidInput = styled(InputItem)`
-	border-bottom: 5px solid red;
+	border-bottom: 1px solid red;
 `;
 
 export default function Input({
@@ -23,13 +23,13 @@ export default function Input({
 	touched
 }) {
 	let InputElement = null;
-	if (touched) {
+	if (invalid && touched) {
 		InputElement = (
 			<InvalidInput {...elementconfig} value={value} onChange={change} />
 		);
 	} else {
 		InputElement = (
-			<InvalidInput {...elementconfig} value={value} onChange={change} />
+			<InputItem {...elementconfig} value={value} onChange={change} />
 		);
 	}
 

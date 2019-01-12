@@ -17,12 +17,20 @@ const ContentWrapper = styled.div`
 const ProfileInfo = styled.div`
 	display: flex;
 	justify-content: space-between;
+
+	@media (max-width: 900px) {
+		flex-direction: column;
+	}
 `;
 
 const ProfileDetailsWrapper = styled.div``;
 
 const UserImageSecondaryWrapper = styled(UserImageWrapper)`
 	width: 16rem;
+
+	@media (max-width: 900px) {
+		width: 12rem;
+	}
 `;
 
 const UserImageSecondary = styled(UserImage)`
@@ -35,12 +43,47 @@ const EditText = styled.span`
 	margin-left: 3rem;
 `;
 
+const ImageWrapper = styled(Card)`
+	text-align: center;
+	padding: 4rem 7rem;
+
+	@media (max-width: 900px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 2rem;
+	}
+`;
+
+const CardSecondary = styled(Card)`
+	width: 70vw;
+	padding: 4rem;
+
+	@media (max-width: 800px) {
+		width: 60vw;
+	}
+
+	@media (max-width: 600px) {
+		width: 60vw;
+	}
+`;
+
+const ProfileWrapper = styled.div`
+	display: flex;
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+`;
+
 export default function Profile() {
 	return (
-		<div style={{ display: "flex" }}>
+		<ProfileWrapper>
 			<Sidebar />
 			<ContentWrapper>
-				<Card style={{ width: "70vw", padding: "4rem" }}>
+				<CardSecondary>
 					<CardHeading>
 						Accounts <span> > Profile</span>
 					</CardHeading>
@@ -151,15 +194,15 @@ export default function Profile() {
 								</div>
 							</div>
 						</ProfileDetailsWrapper>
-						<Card style={{ textAlign: "center", padding: "4rem 7rem" }}>
+						<ImageWrapper>
 							<UserImageSecondaryWrapper>
 								<UserImageSecondary src={user} />
 							</UserImageSecondaryWrapper>
 							<ListTextSecondary>Change Image</ListTextSecondary>
-						</Card>
+						</ImageWrapper>
 					</ProfileInfo>
-				</Card>
+				</CardSecondary>
 			</ContentWrapper>
-		</div>
+		</ProfileWrapper>
 	);
 }

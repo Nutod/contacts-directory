@@ -59,9 +59,13 @@ const ContactContainer = styled.div`
 	margin-left: 8rem;
 `;
 
+const ContactListWrapper = styled.div`
+	display: flex;
+`;
+
 export default function ContactList() {
 	return (
-		<div style={{ display: "flex" }}>
+		<ContactListWrapper>
 			<Sidebar />
 			<ContentWrapper>
 				<SectionHeader>
@@ -90,6 +94,6 @@ export default function ContactList() {
 					<List />
 				</ContactContainer>
 			</ContentWrapper>
-		</div>
+		</ContactListWrapper>
 	);
 }

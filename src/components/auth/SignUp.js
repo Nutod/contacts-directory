@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Box } from "grommet";
 import styled from "styled-components";
 import Background from "../../components/elements/Background/Background";
 import Eclipse from "../../assets/icons/eclipse-bg.svg";
@@ -17,43 +16,94 @@ export const Container = styled.div`
 	height: 100vh;
 `;
 
-export const ToolBar = props => (
-	<Box
-		tag="header"
-		direction="row"
-		align="center"
-		justify="between"
-		pad={{ left: "medium", right: "small", vertical: "small" }}
-		{...props}
-		style={{ zIndex: 5 }}
-	/>
-);
+export const ToolBar = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 5;
 
-export const Content = props => (
-	<Box
-		tag="content"
-		direction="row"
-		align="center"
-		justify="between"
-		pad={{ left: "medium", right: "small", vertical: "small" }}
-		{...props}
-		style={{ zIndex: 4, margin: "0rem 12rem" }}
-	/>
-);
+	@media (max-width: 790px) {
+		flex-direction: column;
+	}
+`;
+
+export const Content = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 4;
+	margin: 0rem 12rem;
+
+	@media (max-width: 920px) {
+		flex-direction: column-reverse;
+	}
+`;
+
+export const CTAWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	@media (max-width: 920px) {
+		order: 2;
+		align-items: center;
+		margin-top: 4rem;
+		margin-bottom: 8rem;
+	}
+`;
 
 export const Backdrop = styled.div`
 	position: absolute;
 	top: 0;
 	z-index: -1;
 	overflow: hidden;
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
+
+	@media (max-width: 920px) {
+		height: 140vh;
+		overflow: hidden;
+	}
+
+	@media (max-width: 790px) {
+		height: 160vh;
+	}
 `;
 
 export const HeadingOne = styled.h1`
 	font-size: 8rem;
 	margin: 4rem 0;
 	color: ${theme.purple};
+
+	@media (max-width: 920px) {
+		text-align: center;
+		margin: 0;
+	}
+
+	@media (max-width: 615px) {
+		font-size: 6rem;
+	}
+
+	@media (max-width: 515px) {
+		font-size: 5rem;
+	}
+`;
+
+export const CTAText = styled.p`
+	width: 25rem;
+	text-align: right;
+
+	@media (max-width: 920px) {
+		text-align: center;
+	}
+
+	@media (max-width: 615px) {
+		font-size: 1.7rem;
+	}
+
+	@media (max-width: 515px) {
+		font-size: 1.5rem;
+	}
 `;
 
 export const TermsAndAgreementParagraph = styled.p`
@@ -69,6 +119,26 @@ export const LoginParagraph = styled.p`
 
 export const BrandText = styled.span`
 	color: ${theme.brand};
+`;
+
+export const HR = styled.hr`
+	width: 25rem;
+	margin: 0;
+	height: 1rem;
+	border: none;
+	border-radius: 1rem;
+	background: ${theme.brand};
+
+	@media (max-width: 615px) {
+		width: 20rem;
+		height: 0.5rem;
+		margin: -1rem;
+	}
+
+	@media (max-width: 515px) {
+		width: 15rem;
+		height: 0.5rem;
+	}
 `;
 
 // TODO: Convert to class component
@@ -127,14 +197,13 @@ export default class SignUp extends Component {
 				valid: false,
 				touched: false
 			}
-		},
-		loading: false
+		}
 	};
 
 	signUpFormHandler = event => {
 		event.preventDefault();
-		this.setState({ loading: true });
 
+		// Accessing form data from state
 		const formData = {};
 		for (let formElementIdentifier in this.state.signUpForm) {
 			formData[formElementIdentifier] = this.state.signUpForm[
@@ -145,10 +214,15 @@ export default class SignUp extends Component {
 		// Add values to localStorage
 		localStorage.setItem("username", formData.username);
 		localStorage.setItem("email", formData.email);
+
+		// Set expiration value in localStorage
 		localStorage.setItem("expiresIn", 36000);
+
+		// Pass expiration value to the expiration function
 		expiration(localStorage.getItem("expiresIn"));
+
+		// Redirect after user is signed up
 		this.props.history.push("/account");
-		console.log(formData);
 	};
 
 	inputChangeHandler = (event, inputIdentifier) => {
@@ -164,11 +238,6 @@ export default class SignUp extends Component {
 		formElement.touched = true;
 		signUpForm[inputIdentifier] = formElement;
 
-		// Switched Logic
-		// let formIsValid = true;
-		// for (let inputIdentifiers in signUpForm) {
-		// 	formIsValid = signUpForm[inputIdentifiers].valid && formIsValid;
-		// }
 		this.setState({ signUpForm });
 	};
 
@@ -203,18 +272,7 @@ export default class SignUp extends Component {
 					/>
 				</Backdrop>
 				<Content>
-					<Form
-						onSubmit={this.signUpFormHandler}
-						style={{
-							background: "#fff",
-							width: "25vw",
-							padding: "4rem 4rem 3rem 4rem",
-							borderRadius: "2.5rem",
-							boxShadow: "0px -2px 20px #ddd",
-							marginLeft: "5rem",
-							marginTop: "-5rem"
-						}}
-					>
+					<Form onSubmit={this.signUpFormHandler}>
 						{formElementsArray.map(formElement => (
 							<div key={formElement.id}>
 								<label htmlFor={formElement.id}>{formElement.id}</label>
@@ -230,17 +288,15 @@ export default class SignUp extends Component {
 								/>
 							</div>
 						))}
-						{/* <label htmlFor="fullname">Fullname</label>
-						<Input type="text" />
-						<label htmlFor="username">Username</label>
-						<Input type="text" />
-						<label htmlFor="email">Email</label>
-						<Input type="email" />
-						<label htmlFor="password">Password</label>
-						<Input type="password" />
+						<input
+							type="password"
+							name="retypePassword"
+							placeholder="Re-type Password"
+						/>
+						{/* 
 
 						 Add Placeholder style here 
-						<Input type="password" placeholder="Re-type Password" /> */}
+						*/}
 						<div style={{ textAlign: "center" }}>
 							<TermsAndAgreementParagraph>
 								By Signing Up, you agree to our
@@ -248,7 +304,7 @@ export default class SignUp extends Component {
 									Terms & Condition
 								</span>{" "}
 								and read our
-								<span style={{ color: `${theme.brand}` }}>Privacy Policy</span>
+								<span style={{ color: `${theme.brand}` }}> Privacy Policy</span>
 							</TermsAndAgreementParagraph>
 							<Button>Get Started</Button>
 							<LoginParagraph>
@@ -257,29 +313,14 @@ export default class SignUp extends Component {
 							</LoginParagraph>
 						</div>
 					</Form>
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "flex-end"
-						}}
-					>
+					<CTAWrapper>
 						<HeadingOne>Be More.</HeadingOne>
-						<p style={{ width: "25rem", textAlign: "right" }}>
+						<CTAText>
 							All your contacts from all your accounts{" "}
 							<BrandText>In One Place</BrandText>
-						</p>
-						<hr
-							style={{
-								width: "25rem",
-								margin: "0",
-								height: "1rem",
-								border: "none",
-								borderRadius: "1rem",
-								background: theme.brand
-							}}
-						/>
-					</div>
+						</CTAText>
+						<HR />
+					</CTAWrapper>
 				</Content>
 			</Container>
 		);
