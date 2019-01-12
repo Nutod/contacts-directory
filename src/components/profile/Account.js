@@ -44,24 +44,27 @@ export const ListTextSecondary = styled(ListText)`
 
 export default class Account extends Component {
 	state = {
-		user: null
+		user: null,
+		mail: null
 	};
 
-	componentDidMount = () => {
+	UNSAFE_componentWillMount = () => {
 		const user = localStorage.getItem("username");
 		const mail = localStorage.getItem("email");
 
-		console.log({ user, mail });
-		this.setState(() => ({ user }));
+		this.setState(() => ({ user, mail }));
 	};
 
 	render() {
-		// if (!this.state.user) {
-		// 	return <Redirect to="/auth/sign-up" />;
-		// }
+		let redirect = null;
+
+		if (!this.state.user) {
+			redirect = <Redirect to="/auth/sign-up" />;
+		}
 
 		return (
 			<>
+				{redirect}
 				<div style={{ display: "flex" }}>
 					<Sidebar />
 					<ContentWrapper>
