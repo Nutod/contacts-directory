@@ -52,19 +52,16 @@ export default class Account extends Component {
 		const mail = localStorage.getItem("email");
 
 		console.log({ user, mail });
-		this.setState({ user });
+		this.setState(() => ({ user }));
 	};
 
 	render() {
-		let redirect = null;
-
-		if (this.state.user === null) {
-			redirect = <Redirect to="/auth/sign-up" />;
-		}
+		// if (!this.state.user) {
+		// 	return <Redirect to="/auth/sign-up" />;
+		// }
 
 		return (
 			<>
-				{redirect}
 				<div style={{ display: "flex" }}>
 					<Sidebar />
 					<ContentWrapper>
