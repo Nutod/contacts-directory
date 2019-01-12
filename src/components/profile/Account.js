@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Redirect } from "react-router-dom";
 import Sidebar from "../elements/Sidebar/Sidebar";
 import { Card } from "../elements/Card/Card";
 import theme from "../elements/Icons/Colors";
@@ -54,28 +53,9 @@ const AccountWrapper = styled.div`
 `;
 
 export default class Account extends Component {
-	state = {
-		user: null,
-		mail: null
-	};
-
-	UNSAFE_componentWillMount = () => {
-		const user = localStorage.getItem("username");
-		const mail = localStorage.getItem("email");
-
-		this.setState(() => ({ user, mail }));
-	};
-
 	render() {
-		let redirect = null;
-
-		// if (!this.state.user) {
-		// 	redirect = <Redirect to="/auth/sign-up" />;
-		// }
-
 		return (
 			<>
-				{redirect}
 				<AccountWrapper>
 					<Sidebar />
 					<ContentWrapper>
