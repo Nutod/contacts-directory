@@ -9,6 +9,8 @@ import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
 import theme from "../../components/elements/Icons/Colors";
 import Input from "../elements/Input/Input";
+import { checkValidity } from "../../shared/checkValidity";
+import { expiration } from "../../shared/expiration";
 
 export const Container = styled.div`
 	position: relative;
@@ -76,7 +78,8 @@ export default class SignUp extends Component {
 			fullname: {
 				elementconfig: {
 					type: "text",
-					placeholder: ""
+					placeholder: "",
+					required: "required"
 				},
 				value: "",
 				validation: {
@@ -88,7 +91,8 @@ export default class SignUp extends Component {
 			username: {
 				elementconfig: {
 					type: "text",
-					placeholder: ""
+					placeholder: "",
+					required: "required"
 				},
 				value: "",
 				validation: {
@@ -100,7 +104,8 @@ export default class SignUp extends Component {
 			email: {
 				elementconfig: {
 					type: "email",
-					placeholder: ""
+					placeholder: "",
+					required: "required"
 				},
 				value: "",
 				validation: {
@@ -112,7 +117,8 @@ export default class SignUp extends Component {
 			password: {
 				elementconfig: {
 					type: "password",
-					placeholder: ""
+					placeholder: "",
+					required: "required"
 				},
 				value: "",
 				validation: {
@@ -122,7 +128,6 @@ export default class SignUp extends Component {
 				touched: false
 			}
 		},
-		formIsValid: false,
 		loading: false
 	};
 
@@ -136,6 +141,14 @@ export default class SignUp extends Component {
 				formElementIdentifier
 			].value;
 		}
+
+		// Add values to localStorage
+		localStorage.setItem("username", formData.username);
+		localStorage.setItem("email", formData.email);
+		localStorage.setItem("expiresIn", 36000);
+		expiration(localStorage.getItem("expiresIn"));
+		this.props.history.push("/account");
+		console.log(formData);
 	};
 
 	inputChangeHandler = (event, inputIdentifier) => {
@@ -143,7 +156,10 @@ export default class SignUp extends Component {
 		const formElement = { ...signUpForm[inputIdentifier] };
 		formElement.value = event.target.value;
 
-		// Validity here
+		formElement.valid = checkValidity(
+			formElement.value,
+			formElement.validation
+		);
 
 		formElement.touched = true;
 		signUpForm[inputIdentifier] = formElement;
@@ -153,8 +169,6 @@ export default class SignUp extends Component {
 		// for (let inputIdentifiers in signUpForm) {
 		// 	formIsValid = signUpForm[inputIdentifiers].valid && formIsValid;
 		// }
-
-		console.log(this.state, formElement);
 		this.setState({ signUpForm });
 	};
 
@@ -190,7 +204,7 @@ export default class SignUp extends Component {
 				</Backdrop>
 				<Content>
 					<Form
-						onSubmit={event => event.preventDefault()}
+						onSubmit={this.signUpFormHandler}
 						style={{
 							background: "#fff",
 							width: "25vw",
