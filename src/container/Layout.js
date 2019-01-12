@@ -6,6 +6,7 @@ import AddNewContact from "../components/contact/AddNewContact";
 import Account from "../components/profile/Account";
 import Profile from "../components/profile/Profile";
 
+// TODO: Default should load  Account if authenticated else, redirect to auth page
 export default class Layout extends Component {
 	render() {
 		return (
