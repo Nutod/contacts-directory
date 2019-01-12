@@ -8,6 +8,8 @@ import Profile from "../components/profile/Profile";
 import ContactList from "../components/contact/ContactList";
 
 // TODO: Default should load  Account if authenticated else, redirect to auth page
+// TODO: Change Icons
+// TODO: Add Responsiveness
 export default class Layout extends Component {
 	render() {
 		return (

@@ -13,6 +13,7 @@ import Notification from "../../../assets/icons/notifications.svg";
 import Settings from "../../../assets/icons/settings.svg";
 import Help from "../../../assets/icons/help.svg";
 import Feedback from "../../../assets/icons/feedback.svg";
+import SearchBox from "../../../assets/icons/Search-Box.svg";
 
 const Image = styled.img`
 	width: 1.8rem;
@@ -52,6 +53,8 @@ export default class Icons extends Component {
 				return <Image src={Help} alt="" />;
 			case "feedback":
 				return <Image src={Feedback} alt="" />;
+			case "searchbox":
+				return <Image src={SearchBox} alt="" />;
 			default:
 				return null;
 		}
