@@ -5,6 +5,7 @@ import SignIn from "../components/auth/SignIn";
 import AddNewContact from "../components/contact/AddNewContact";
 import Account from "../components/profile/Account";
 import Profile from "../components/profile/Profile";
+import ContactList from "../components/contact/ContactList";
 
 // TODO: Default should load  Account if authenticated else, redirect to auth page
 export default class Layout extends Component {
@@ -16,6 +17,7 @@ export default class Layout extends Component {
 				<Route path="/add-new" component={AddNewContact} />
 				<Route path="/account" component={Account} />
 				<Route path="/profile" component={Profile} />
+				<Route path="/contact-list" component={ContactList} />
 				<Route path="/" exact component={SignIn} />
 			</Switch>
 		);
