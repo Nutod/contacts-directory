@@ -4,6 +4,7 @@ import SignUp from "../components/auth/SignUp";
 import SignIn from "../components/auth/SignIn";
 import AddNewContact from "../components/contact/AddNewContact";
 import Account from "../components/profile/Account";
+import Profile from "../components/profile/Profile";
 
 export default class Layout extends Component {
 	render() {
@@ -13,6 +14,7 @@ export default class Layout extends Component {
 				<Route path="/auth/sign-in" component={SignIn} />
 				<Route path="/add-new" component={AddNewContact} />
 				<Route path="/account" component={Account} />
+				<Route path="/profile" component={Profile} />
 				<Route path="/" exact component={SignIn} />
 			</Switch>
 		);
