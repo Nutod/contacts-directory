@@ -72,7 +72,7 @@ export const Backdrop = styled.div`
 
 export const HeadingOne = styled.h1`
 	font-size: 8rem;
-	margin: 4rem 0;
+	margin: 0rem 0;
 	color: ${theme.purple};
 
 	@media (max-width: 920px) {
