@@ -28,39 +28,53 @@ const asynContactList = asyncComponent(() => {
 });
 
 export default class Layout extends Component {
-	state = {
-		auth: false
-	};
+	// State used for full auth
+	// state = {
+	// 	auth: false
+	// };
 
-	UNSAFE_componentWillMount = () => {
-		const user = localStorage.getItem("username");
+	// UNSAFE_componentWillMount = () => {
+	// 	const user = localStorage.getItem("username");
 
-		this.setState(() => ({ auth: user !== null }));
-	};
+	// 	this.setState(() => ({ auth: user !== null }));
+	// };
 
 	render() {
-		let routes = null;
-		if (!this.state.auth) {
-			routes = (
-				<>
-					<Route path="/auth/sign-up" component={asyncSignUp} />
-					<Route path="/auth/sign-in" component={asyncSignIn} />
-					<Redirect to="/auth/sign-up" />
-				</>
-			);
-		} else {
-			routes = (
-				<>
-					<Route path="/auth/sign-up" component={asyncSignUp} />
-					<Route path="/auth/sign-in" component={asyncSignIn} />
-					<Route path="/add-new" component={asyncAddNewContact} />
-					<Route path="/account" component={asyncAccount} />
-					<Route path="/profile" component={asyncProfile} />
-					<Route path="/contact-list" component={asynContactList} />
-					<Route path="/" exact component={asyncAccount} />
-				</>
-			);
-		}
+		let routes = (
+			<>
+				<Route path="/auth/sign-up" component={asyncSignUp} />
+				<Route path="/auth/sign-in" component={asyncSignIn} />
+				<Route path="/add-new" component={asyncAddNewContact} />
+				<Route path="/account" component={asyncAccount} />
+				<Route path="/profile" component={asyncProfile} />
+				<Route path="/contact-list" component={asynContactList} />
+				<Route path="/" exact component={asyncAccount} />
+			</>
+		)
+
+		// Full Auth flow implemented here
+		// let routes = null;
+		// if (!this.state.auth) {
+		// 	routes = (
+		// 		<>
+		// 			<Route path="/auth/sign-up" component={asyncSignUp} />
+		// 			<Route path="/auth/sign-in" component={asyncSignIn} />
+		// 			<Redirect to="/auth/sign-up" />
+		// 		</>
+		// 	);
+		// } else {
+		// 	routes = (
+		// 		<>
+		// 			<Route path="/auth/sign-up" component={asyncSignUp} />
+		// 			<Route path="/auth/sign-in" component={asyncSignIn} />
+		// 			<Route path="/add-new" component={asyncAddNewContact} />
+		// 			<Route path="/account" component={asyncAccount} />
+		// 			<Route path="/profile" component={asyncProfile} />
+		// 			<Route path="/contact-list" component={asynContactList} />
+		// 			<Route path="/" exact component={asyncAccount} />
+		// 		</>
+		// 	);
+		// }
 		return <Switch>{routes}</Switch>;
 	}
 }
