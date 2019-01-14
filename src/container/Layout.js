@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import asyncComponent from "../HOCs/asyncComponent/asyncComponent";
+// Import Redirect here
 
 // TODO: Change Icons
+
 const asyncSignUp = asyncComponent(() => {
 	return import("../components/auth/SignUp");
 });
@@ -50,7 +52,7 @@ export default class Layout extends Component {
 				<Route path="/contact-list" component={asynContactList} />
 				<Route path="/" exact component={asyncAccount} />
 			</>
-		)
+		);
 
 		// Full Auth flow implemented here
 		// let routes = null;
