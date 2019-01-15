@@ -7,8 +7,9 @@ export default class withError extends Component {
 
 	render() {
 		const { children } = this.props;
+		const { error } = this.state;
 
-		if (this.state.error) {
+		if (error) {
 			return <div>Something went wrong</div>;
 		}
 
