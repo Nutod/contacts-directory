@@ -5,6 +5,10 @@ export default class withError extends Component {
 		error: null
 	};
 
+	componentDidCatch = error => {
+		this.setState({ error });
+	};
+
 	render() {
 		const { children } = this.props;
 		const { error } = this.state;
