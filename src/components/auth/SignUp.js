@@ -144,11 +144,11 @@ export const HR = styled.hr`
 // TODO: Convert to class component
 export default class SignUp extends Component {
 	state = {
-		fullname: '',
-		username: '',
-		email: '',
-		password: '',
-		retypePassword: ''
+		fullname: "",
+		username: "",
+		email: "",
+		password: "",
+		retypePassword: ""
 	};
 
 	signUpFormHandler = event => {
@@ -176,21 +176,7 @@ export default class SignUp extends Component {
 		this.props.history.push("/account");
 	};
 
-	inputChangeHandler = (event, inputIdentifier) => {
-		const signUpForm = { ...this.state.signUpForm };
-		const formElement = { ...signUpForm[inputIdentifier] };
-		formElement.value = event.target.value;
-
-		formElement.valid = checkValidity(
-			formElement.value,
-			formElement.validation
-		);
-
-		formElement.touched = true;
-		signUpForm[inputIdentifier] = formElement;
-
-		this.setState({ signUpForm });
-	};
+	inputChangeHandler = event => {};
 
 	render() {
 		const formElementsArray = [];
@@ -224,7 +210,6 @@ export default class SignUp extends Component {
 				</Backdrop>
 				<Content>
 					<Form>
-						
 						{/* fullname | username | email | password */}
 						<input
 							type="password"
