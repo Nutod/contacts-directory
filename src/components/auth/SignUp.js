@@ -144,60 +144,11 @@ export const HR = styled.hr`
 // TODO: Convert to class component
 export default class SignUp extends Component {
 	state = {
-		signUpForm: {
-			fullname: {
-				elementconfig: {
-					type: "text",
-					placeholder: "",
-					required: "required"
-				},
-				value: "",
-				validation: {
-					required: true
-				},
-				valid: false,
-				touched: false
-			},
-			username: {
-				elementconfig: {
-					type: "text",
-					placeholder: "",
-					required: "required"
-				},
-				value: "",
-				validation: {
-					required: true
-				},
-				valid: false,
-				touched: false
-			},
-			email: {
-				elementconfig: {
-					type: "email",
-					placeholder: "",
-					required: "required"
-				},
-				value: "",
-				validation: {
-					required: true
-				},
-				valid: false,
-				touched: false
-			},
-			password: {
-				elementconfig: {
-					type: "password",
-					placeholder: "",
-					required: "required"
-				},
-				value: "",
-				validation: {
-					required: true
-				},
-				valid: false,
-				touched: false
-			}
-		}
+		fullname: '',
+		username: '',
+		email: '',
+		password: '',
+		retypePassword: ''
 	};
 
 	signUpFormHandler = event => {
@@ -272,22 +223,9 @@ export default class SignUp extends Component {
 					/>
 				</Backdrop>
 				<Content>
-					<Form onSubmit={this.signUpFormHandler}>
-						{formElementsArray.map(formElement => (
-							<div key={formElement.id}>
-								<label htmlFor={formElement.id}>{formElement.id}</label>
-								<Input
-									elementtype={formElement.config.elementtype}
-									elementconfig={formElement.config.elementconfig}
-									value={formElement.config.value}
-									invalid={!formElement.config.valid}
-									touched={formElement.config.touched}
-									change={event =>
-										this.inputChangeHandler(event, formElement.id)
-									}
-								/>
-							</div>
-						))}
+					<Form>
+						
+						{/* fullname | username | email | password */}
 						<input
 							type="password"
 							name="retypePassword"
