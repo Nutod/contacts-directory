@@ -215,6 +215,8 @@ export default class SignUp extends Component {
 						<input type="text" name="fullname" />
 						<label htmlFor="username">Username</label>
 						<input type="text" name="username" />
+						<label htmlFor="email">Email</label>
+						<input type="text" name="email" />
 						<input
 							type="password"
 							name="retypePassword"
