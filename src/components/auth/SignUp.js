@@ -176,7 +176,7 @@ export default class SignUp extends Component {
 		this.props.history.push("/account");
 	};
 
-	inputChangeHandler = event => {};
+	changeHandler = event => {};
 
 	render() {
 		const formElementsArray = [];
@@ -212,18 +212,39 @@ export default class SignUp extends Component {
 					<Form>
 						{/* fullname | username | email | password */}
 						<label htmlFor="fullname">Fullname</label>
-						<input type="text" name="fullname" required />
+						<input
+							type="text"
+							name="fullname"
+							required
+							onChange={this.changeHandler}
+						/>
 						<label htmlFor="username">Username</label>
-						<input type="text" name="username" required />
+						<input
+							type="text"
+							name="username"
+							required
+							onChange={this.changeHandler}
+						/>
 						<label htmlFor="email">Email</label>
-						<input type="email" name="email" required />
+						<input
+							type="email"
+							name="email"
+							required
+							onChange={this.changeHandler}
+						/>
 						<label htmlFor="password">Password</label>
-						<input type="password" name="password" required />
+						<input
+							type="password"
+							name="password"
+							required
+							onChange={this.changeHandler}
+						/>
 						<input
 							type="password"
 							name="retypePassword"
 							placeholder="Re-type Password"
 							required
+							onChange={this.changeHandler}
 						/>
 						{/* 
 
