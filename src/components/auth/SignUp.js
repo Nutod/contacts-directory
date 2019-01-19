@@ -7,8 +7,6 @@ import Navigation from "../../components/elements/Navigation/Navigation";
 import { Form } from "../../components/elements/Form/Form";
 import { Button } from "../../components/elements/Button/Button";
 import theme from "../../components/elements/Icons/Colors";
-import Input from "../elements/Input/Input";
-import { checkValidity } from "../../shared/checkValidity";
 import { expiration } from "../../shared/expiration";
 
 export const Container = styled.div`
@@ -156,11 +154,6 @@ export default class SignUp extends Component {
 
 		// Accessing form data from state
 		const formData = {};
-		for (let formElementIdentifier in this.state.signUpForm) {
-			formData[formElementIdentifier] = this.state.signUpForm[
-				formElementIdentifier
-			].value;
-		}
 
 		// Add values to localStorage
 		localStorage.setItem("username", formData.username);
@@ -176,7 +169,9 @@ export default class SignUp extends Component {
 		this.props.history.push("/account");
 	};
 
-	changeHandler = event => {};
+	changeHandler = event => {
+		// Implement logic here
+	};
 
 	render() {
 		const formElementsArray = [];
