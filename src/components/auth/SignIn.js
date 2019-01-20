@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Background from "../../components/elements/Background/Background";
 import Eclipse from "../../assets/icons/eclipse-bg.svg";
 import Logo from "../../components/elements/Logo/Logo";
@@ -20,66 +20,68 @@ import {
 	CTAWrapper
 } from "./SignUp";
 
-export default function SignUp() {
-	return (
-		<Container>
-			<ToolBar>
-				<Logo />
-				<Navigation />
-			</ToolBar>
-			<Backdrop>
-				<Background />
-			</Backdrop>
-			<Backdrop>
-				<img
-					src={Eclipse}
-					alt="bg"
-					style={{
-						width: "140rem",
-						position: "absolute",
-						top: "0",
-						left: "-50rem"
-					}}
-				/>
-			</Backdrop>
-			<Content>
-				<Form onSubmit={event => event.preventDefault()}>
-					<label htmlFor="email">Email</label>
-					<input
-						type="email"
-						name="email"
-						required
-						onChange={this.changeHandler}
+export default class SignUp extends Component {
+	render() {
+		return (
+			<Container>
+				<ToolBar>
+					<Logo />
+					<Navigation />
+				</ToolBar>
+				<Backdrop>
+					<Background />
+				</Backdrop>
+				<Backdrop>
+					<img
+						src={Eclipse}
+						alt="bg"
+						style={{
+							width: "140rem",
+							position: "absolute",
+							top: "0",
+							left: "-50rem"
+						}}
 					/>
-					<label htmlFor="password">Password</label>
-					<input
-						type="password"
-						name="password"
-						required
-						onChange={this.changeHandler}
-					/>
+				</Backdrop>
+				<Content>
+					<Form onSubmit={event => event.preventDefault()}>
+						<label htmlFor="email">Email</label>
+						<input
+							type="email"
+							name="email"
+							required
+							onChange={this.changeHandler}
+						/>
+						<label htmlFor="password">Password</label>
+						<input
+							type="password"
+							name="password"
+							required
+							onChange={this.changeHandler}
+						/>
 
-					<div style={{ textAlign: "center" }}>
-						<TermsAndAgreementParagraph>
-							Forgot your Password?{" "}
-							<span style={{ color: `${theme.brand}` }}>Reset it here</span>
-						</TermsAndAgreementParagraph>
-						<Button>Login</Button>
-						<LoginParagraph>
-							Don't have an accout?{" "}
-							<span style={{ color: `${theme.brand}` }}>Get Started</span>
-						</LoginParagraph>
-					</div>
-				</Form>
-				<CTAWrapper>
-					<HeadingOne>Be More.</HeadingOne>
-					<CTAText>
-						All your contacts from all your accounts{" "}
-						<BrandText>In One Place</BrandText>
-					</CTAText>
-					<HR />
-				</CTAWrapper>
-			</Content>
-		</Container>
-	);
+						<div style={{ textAlign: "center" }}>
+							<TermsAndAgreementParagraph>
+								Forgot your Password?{" "}
+								<span style={{ color: `${theme.brand}` }}>Reset it here</span>
+							</TermsAndAgreementParagraph>
+							<Button>Login</Button>
+							<LoginParagraph>
+								Don't have an accout?{" "}
+								<span style={{ color: `${theme.brand}` }}>Get Started</span>
+							</LoginParagraph>
+						</div>
+					</Form>
+					<CTAWrapper>
+						<HeadingOne>Be More.</HeadingOne>
+						<CTAText>
+							All your contacts from all your accounts{" "}
+							<BrandText>In One Place</BrandText>
+						</CTAText>
+						<HR />
+					</CTAWrapper>
+				</Content>
+			</Container>
+		);
+	}
 }
