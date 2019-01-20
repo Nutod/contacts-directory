@@ -139,7 +139,6 @@ export const HR = styled.hr`
 	}
 `;
 
-// TODO: Convert to class component
 export default class SignUp extends Component {
 	state = {
 		fullname: "",
@@ -171,17 +170,10 @@ export default class SignUp extends Component {
 
 	changeHandler = event => {
 		// Implement logic here
+		console.log(event.target);
 	};
 
 	render() {
-		const formElementsArray = [];
-		for (let key in this.state.signUpForm) {
-			formElementsArray.push({
-				id: key,
-				config: this.state.signUpForm[key]
-			});
-		}
-
 		return (
 			<Container>
 				<ToolBar>
