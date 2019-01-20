@@ -10,7 +10,6 @@ describe("<Layout />", () => {
 	const wrapper = shallow(<Layout />);
 	it("Should return default true", () => {
 		expect(true).toBe(true);
-		console.log(wrapper.debug());
 	});
 
 	it("Should match snapshot", () => {
