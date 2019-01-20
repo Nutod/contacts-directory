@@ -169,9 +169,10 @@ export default class SignUp extends Component {
 		this.props.history.push("/account");
 	};
 
-	changeHandler = event => {
-		// Implement logic here
-		console.log(event.target);
+	changeHandler = ({ target }) => {
+		const { name, value } = target;
+		console.log(target);
+		this.setState({ [name]: value });
 	};
 
 	render() {
