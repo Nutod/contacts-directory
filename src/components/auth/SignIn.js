@@ -26,6 +26,13 @@ export default class SignUp extends Component {
 		password: ""
 	};
 
+	signInFormHandler = event => {
+		event.preventDefault();
+
+		const formData = { ...this.state };
+		console.log(formData);
+	};
+
 	changeHandler = ({ target }) => {
 		const { name, value } = target;
 		this.setState({ [name]: value });
@@ -54,7 +61,7 @@ export default class SignUp extends Component {
 					/>
 				</Backdrop>
 				<Content>
-					<Form onSubmit={event => event.preventDefault()}>
+					<Form onSubmit={this.signInFormHandler}>
 						<label htmlFor="email">Email</label>
 						<input
 							type="email"
