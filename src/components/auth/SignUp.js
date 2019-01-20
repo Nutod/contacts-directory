@@ -197,7 +197,6 @@ export default class SignUp extends Component {
 				</Backdrop>
 				<Content>
 					<Form>
-						{/* fullname | username | email | password */}
 						<label htmlFor="fullname">Fullname</label>
 						<input
 							type="text"

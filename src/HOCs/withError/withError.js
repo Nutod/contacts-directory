@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class withError extends Component {
+export default class WithError extends Component {
 	state = {
 		error: null
 	};
