@@ -171,7 +171,6 @@ export default class SignUp extends Component {
 
 	changeHandler = ({ target }) => {
 		const { name, value } = target;
-		console.log(target);
 		this.setState({ [name]: value });
 	};
 
