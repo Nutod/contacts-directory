@@ -146,28 +146,29 @@ export default class SignUp extends Component {
 		username: "",
 		email: "",
 		password: "",
-		retypePassword: ""
+		retypePassword: "",
+		error: false
 	};
 
 	signUpFormHandler = event => {
 		event.preventDefault();
-
 		// Accessing form data from state
 		const formData = { ...this.state };
 		console.log(formData.password, formData.retypePassword);
 		// Validate the password field and retype password field
-
+		if (formData.password !== formData.retypePassword) {
+			this.setState({ error: true });
+			return;
+		}
 		// Add values to localStorage
-		// localStorage.setItem("username", formData.username);
-		// localStorage.setItem("email", formData.email);
-
-		// // Set expiration value in localStorage
-		// localStorage.setItem("expiresIn", 36000);
-		// // Pass expiration value to the expiration function
-		// expiration(localStorage.getItem("expiresIn"));
-
-		// // Redirect after user is signed up
-		// this.props.history.push("/account");
+		localStorage.setItem("username", formData.username);
+		localStorage.setItem("email", formData.email);
+		// Set expiration value in localStorage
+		localStorage.setItem("expiresIn", 36000);
+		// Pass expiration value to the expiration function
+		expiration(localStorage.getItem("expiresIn"));
+		// Redirect after user is signed up
+		this.props.history.push("/account");
 	};
 
 	changeHandler = ({ target }) => {
@@ -198,7 +199,7 @@ export default class SignUp extends Component {
 					/>
 				</Backdrop>
 				<Content>
-					<Form method="post">
+					<Form onSubmit={this.signUpFormHandler}>
 						<label htmlFor="fullname">Fullname</label>
 						<input
 							type="text"
