@@ -45,9 +45,19 @@ export default function SignUp() {
 			<Content>
 				<Form onSubmit={event => event.preventDefault()}>
 					<label htmlFor="email">Email</label>
-					<input type="email" />
+					<input
+						type="email"
+						name="email"
+						required
+						onChange={this.changeHandler}
+					/>
 					<label htmlFor="password">Password</label>
-					<input type="password" />
+					<input
+						type="password"
+						name="password"
+						required
+						onChange={this.changeHandler}
+					/>
 
 					<div style={{ textAlign: "center" }}>
 						<TermsAndAgreementParagraph>
