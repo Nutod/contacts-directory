@@ -153,20 +153,21 @@ export default class SignUp extends Component {
 		event.preventDefault();
 
 		// Accessing form data from state
-		const formData = {};
+		const formData = { ...this.state };
+		console.log(formData.password, formData.retypePassword);
+		// Validate the password field and retype password field
 
 		// Add values to localStorage
-		localStorage.setItem("username", formData.username);
-		localStorage.setItem("email", formData.email);
+		// localStorage.setItem("username", formData.username);
+		// localStorage.setItem("email", formData.email);
 
-		// Set expiration value in localStorage
-		localStorage.setItem("expiresIn", 36000);
+		// // Set expiration value in localStorage
+		// localStorage.setItem("expiresIn", 36000);
+		// // Pass expiration value to the expiration function
+		// expiration(localStorage.getItem("expiresIn"));
 
-		// Pass expiration value to the expiration function
-		expiration(localStorage.getItem("expiresIn"));
-
-		// Redirect after user is signed up
-		this.props.history.push("/account");
+		// // Redirect after user is signed up
+		// this.props.history.push("/account");
 	};
 
 	changeHandler = ({ target }) => {
@@ -197,7 +198,7 @@ export default class SignUp extends Component {
 					/>
 				</Backdrop>
 				<Content>
-					<Form>
+					<Form method="post">
 						<label htmlFor="fullname">Fullname</label>
 						<input
 							type="text"
