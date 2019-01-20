@@ -30,10 +30,11 @@ export const Content = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	z-index: 4;
-	margin: 0rem 12rem;
+	margin: 4rem 12rem;
 
 	@media (max-width: 920px) {
 		flex-direction: column-reverse;
+		margin: 0rem 12rem;
 	}
 `;
 
