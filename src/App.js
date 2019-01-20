@@ -1,12 +1,12 @@
 import React from "react";
 import "circular-std";
 import Layout from "./container/Layout";
-import withError from "./HOCs/withError/withError";
+import WithError from "./HOCs/withError/WithError";
 
 export default function App() {
 	return (
-		<withError>
+		<WithError>
 			<Layout />
-		</withError>
+		</WithError>
 	);
 }
