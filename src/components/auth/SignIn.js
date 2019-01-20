@@ -21,6 +21,16 @@ import {
 } from "./SignUp";
 
 export default class SignUp extends Component {
+	state = {
+		email: "",
+		password: ""
+	};
+
+	changeHandler = ({ target }) => {
+		const { name, value } = target;
+		this.setState({ [name]: value });
+	};
+
 	render() {
 		return (
 			<Container>
