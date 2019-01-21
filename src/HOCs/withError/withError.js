@@ -14,9 +14,9 @@ export default class WithError extends Component {
 		const { error } = this.state;
 
 		if (error) {
-			return <div>Something went wrong</div>;
+			return <p>Something went wrong!</p>;
 		}
 
-		return <div>{children}</div>;
+		return <>{children}</>;
 	}
 }
