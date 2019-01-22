@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Profile /> Should match snapshot 1`] = `
+<styled.div>
+  <Sidebar />
+  <styled.div>
+    <Styled(styled.div)>
+      <styled.p>
+        Accounts 
+        <span>
+           &gt; Profile
+        </span>
+      </styled.p>
+      <styled.div>
+        <styled.div>
+          <div>
+            <p
+              style={
+                Object {
+                  "color": "#ccc",
+                  "fontSize": "1rem",
+                  "margin": "0",
+                }
+              }
+            >
+              Name
+            </p>
+            <p
+              style={
+                Object {
+                  "margin": "0",
+                }
+              }
+            >
+              Larry Etim 
+              <styled.span>
+                Edit
+              </styled.span>
+            </p>
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "marginTop": "1.5rem",
+              }
+            }
+          >
+            <Icons
+              label="phone"
+            />
+            <div
+              style={
+                Object {
+                  "marginLeft": "1rem",
+                }
+              }
+            >
+              <p
+                style={
+                  Object {
+                    "color": "#555",
+                    "fontSize": "1.3rem",
+                    "margin": "0",
+                  }
+                }
+              >
+                +234-804-383-3908
+                <styled.span>
+                  Edit
+                </styled.span>
+              </p>
+              <p
+                style={
+                  Object {
+                    "color": "#ccc",
+                    "fontSize": "1rem",
+                    "margin": "0",
+                    "marginTop": "-0.7rem",
+                  }
+                }
+              >
+                Mobile
+              </p>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "marginTop": "1.5rem",
+              }
+            }
+          >
+            <Icons
+              label="phone"
+            />
+            <div
+              style={
+                Object {
+                  "marginLeft": "1rem",
+                }
+              }
+            >
+              <p
+                style={
+                  Object {
+                    "color": "#555",
+                    "fontSize": "1.3rem",
+                    "margin": "0",
+                  }
+                }
+              >
+                +234-01-256-290
+                <styled.span>
+                  Edit
+                </styled.span>
+              </p>
+              <p
+                style={
+                  Object {
+                    "color": "#ccc",
+                    "fontSize": "1rem",
+                    "margin": "0",
+                    "marginTop": "-0.7rem",
+                  }
+                }
+              >
+                Other
+              </p>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "marginTop": "1.5rem",
+              }
+            }
+          >
+            <Icons
+              label="mail"
+            />
+            <div
+              style={
+                Object {
+                  "marginLeft": "1rem",
+                }
+              }
+            >
+              <p
+                style={
+                  Object {
+                    "color": "#555",
+                    "fontSize": "1.3rem",
+                    "margin": "0",
+                  }
+                }
+              >
+                larryetim@gmail.com
+                <styled.span>
+                  Edit
+                </styled.span>
+              </p>
+              <p
+                style={
+                  Object {
+                    "color": "#ccc",
+                    "fontSize": "1rem",
+                    "margin": "0",
+                    "marginTop": "-0.7rem",
+                  }
+                }
+              >
+                Email
+              </p>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "marginTop": "1.5rem",
+              }
+            }
+          >
+            <Icons
+              label="suitcase"
+            />
+            <div
+              style={
+                Object {
+                  "marginLeft": "1rem",
+                }
+              }
+            >
+              <p
+                style={
+                  Object {
+                    "color": "#555",
+                    "fontSize": "1.3rem",
+                    "margin": "0",
+                  }
+                }
+              >
+                Rexxe Powerplant
+                <styled.span>
+                  Edit
+                </styled.span>
+              </p>
+              <p
+                style={
+                  Object {
+                    "color": "#ccc",
+                    "fontSize": "1rem",
+                    "margin": "0",
+                    "marginTop": "-0.7rem",
+                  }
+                }
+              >
+                Word
+              </p>
+            </div>
+          </div>
+        </styled.div>
+        <Styled(styled.div)>
+          <Styled(styled.div)>
+            <Styled(styled.img)
+              src="user.jpg"
+            />
+          </Styled(styled.div)>
+          <Styled(styled.p)>
+            Change Image
+          </Styled(styled.p)>
+        </Styled(styled.div)>
+      </styled.div>
+    </Styled(styled.div)>
+  </styled.div>
+</styled.div>
+`;

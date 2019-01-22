@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignIn /> Should match snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <Logo />
+    <Navigation />
+  </styled.div>
+  <styled.div>
+    <Background />
+  </styled.div>
+  <styled.div>
+    <img
+      alt="bg"
+      src="eclipse-bg.svg"
+      style={
+        Object {
+          "left": "-50rem",
+          "position": "absolute",
+          "top": "0",
+          "width": "140rem",
+        }
+      }
+    />
+  </styled.div>
+  <styled.div>
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        name="email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        name="password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+      <div
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        <styled.p>
+          Forgot your Password?
+           
+          <span
+            style={
+              Object {
+                "color": "#e4235d",
+              }
+            }
+          >
+            Reset it here
+          </span>
+        </styled.p>
+        <styled.button>
+          Login
+        </styled.button>
+        <styled.p>
+          Don't have an accout?
+           
+          <span
+            style={
+              Object {
+                "color": "#e4235d",
+              }
+            }
+          >
+            Get Started
+          </span>
+        </styled.p>
+      </div>
+    </styled.form>
+    <styled.div>
+      <styled.h1>
+        Be More.
+      </styled.h1>
+      <styled.p>
+        All your contacts from all your accounts
+         
+        <styled.span>
+          In One Place
+        </styled.span>
+      </styled.p>
+      <styled.hr />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

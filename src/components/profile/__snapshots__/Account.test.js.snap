@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Account /> Should match snapshot 1`] = `
+<Redirect
+  push={false}
+  to="/auth/sign-up"
+/>
+`;

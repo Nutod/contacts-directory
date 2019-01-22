@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUp /> Should match snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <Logo />
+    <Navigation />
+  </styled.div>
+  <styled.div>
+    <Background />
+  </styled.div>
+  <styled.div>
+    <img
+      alt="bg"
+      src="eclipse-bg.svg"
+      style={
+        Object {
+          "left": "-50rem",
+          "position": "absolute",
+          "top": "0",
+          "width": "140rem",
+        }
+      }
+    />
+  </styled.div>
+  <styled.div>
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="fullname"
+      >
+        Fullname
+      </label>
+      <input
+        name="fullname"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        name="username"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+      <label
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        name="email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        name="password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+      <input
+        name="retypePassword"
+        onChange={[Function]}
+        placeholder="Re-type Password"
+        required={true}
+        type="password"
+      />
+      <div
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        <styled.p>
+          By Signing Up, you agree to our
+          <span
+            style={
+              Object {
+                "color": "#e4235d",
+              }
+            }
+          >
+            Terms & Condition
+          </span>
+           
+          and read our
+          <span
+            style={
+              Object {
+                "color": "#e4235d",
+              }
+            }
+          >
+             Privacy Policy
+          </span>
+        </styled.p>
+        <styled.button>
+          Get Started
+        </styled.button>
+        <styled.p>
+          Already have an Account?
+           
+          <span
+            style={
+              Object {
+                "color": "#e4235d",
+              }
+            }
+          >
+            Login
+          </span>
+        </styled.p>
+      </div>
+    </styled.form>
+    <styled.div>
+      <styled.h1>
+        Be More.
+      </styled.h1>
+      <styled.p>
+        All your contacts from all your accounts
+         
+        <styled.span>
+          In One Place
+        </styled.span>
+      </styled.p>
+      <styled.hr />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
