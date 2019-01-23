@@ -1,10 +1,19 @@
-import Enzyme from "enzyme";
+import React from "react";
+import Enzyme, {
+	shallow
+} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import toJson from "enzyme-to-json";
+import Logo from './Logo'
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({
+	adapter: new Adapter()
+});
 
-describe("", () => {
-	it("should ", () => {
-		expect(true).toBe(true);
+describe("<Logo />", () => {
+	const wrapper = shallow( < Logo / > );
+
+	it("Should match snapshot", () => {
+		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 });
