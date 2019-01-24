@@ -8,7 +8,7 @@ Enzyme.configure({
 	adapter: new Adapter()
 });
 
-describe("<Logo />", () => {
+describe("<Logo Snapshot />", () => {
 	const wrapper = shallow(<Logo />);
 
 	it("Should match snapshot", () => {
