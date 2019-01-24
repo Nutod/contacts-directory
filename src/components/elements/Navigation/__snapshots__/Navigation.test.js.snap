@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> Should match snapshot 1`] = `
+<styled.ul>
+  <NavigationItem>
+    Home
+  </NavigationItem>
+  <NavigationItem>
+    About
+  </NavigationItem>
+  <NavigationItem>
+    Pricing
+  </NavigationItem>
+  <NavigationItem>
+    Contact Us
+  </NavigationItem>
+</styled.ul>
+`;

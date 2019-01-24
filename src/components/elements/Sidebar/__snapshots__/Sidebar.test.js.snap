@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sidebar /> Should match snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <styled.img
+        alt="User"
+        src="user.jpg"
+      />
+    </styled.div>
+    <div>
+      <styled.p>
+        Larry Etim
+      </styled.p>
+      <styled.div>
+        <Icons
+          label="location"
+        />
+        <p
+          style={
+            Object {
+              "marginLeft": "-0.5rem",
+            }
+          }
+        >
+          Lagos, Nigeria
+        </p>
+      </styled.div>
+    </div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      <Icons
+        label="contact"
+      />
+      <span>
+        Contacts
+      </span>
+    </styled.div>
+    <styled.div>
+      <Icons
+        label="notification"
+      />
+      <span>
+        Notifications
+      </span>
+    </styled.div>
+    <styled.div>
+      <Icons
+        label="user"
+      />
+      <span>
+        Accounts
+      </span>
+    </styled.div>
+  </styled.div>
+  <div
+    style={
+      Object {
+        "background": "#eee",
+        "height": "2px",
+      }
+    }
+  />
+  <styled.div>
+    <Styled(styled.div)>
+      <Icons
+        label="settings"
+      />
+      <span>
+        Settings
+      </span>
+    </Styled(styled.div)>
+    <Styled(styled.div)>
+      <Icons
+        label="help"
+      />
+      <span>
+        Help
+      </span>
+    </Styled(styled.div)>
+    <Styled(styled.div)>
+      <Icons
+        label="feedback"
+      />
+      <span>
+        Feedback
+      </span>
+    </Styled(styled.div)>
+  </styled.div>
+</styled.div>
+`;
