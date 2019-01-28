@@ -154,7 +154,6 @@ export default class SignUp extends Component {
 		event.preventDefault();
 		// Accessing form data from state
 		const formData = { ...this.state };
-		console.log(formData.password, formData.retypePassword);
 		// Validate the password field and retype password field
 		if (formData.password !== formData.retypePassword) {
 			this.setState({ error: true });
