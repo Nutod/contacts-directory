@@ -28,8 +28,9 @@ export default class SignUp extends Component {
 
 	signInFormHandler = event => {
 		event.preventDefault();
-
 		const formData = { ...this.state };
+		// Send off to backend 
+		return formData;
 	};
 
 	changeHandler = ({ target }) => {
@@ -37,6 +38,7 @@ export default class SignUp extends Component {
 		this.setState({ [name]: value });
 	};
 
+	// TODO: Add fieldset
 	render() {
 		return (
 			<Container>
