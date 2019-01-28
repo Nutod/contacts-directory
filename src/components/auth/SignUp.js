@@ -234,10 +234,6 @@ export default class SignUp extends Component {
 							required
 							onChange={this.changeHandler}
 						/>
-						{/* 
-
-						 Add Placeholder style here 
-						*/}
 						<div style={{ textAlign: "center" }}>
 							<TermsAndAgreementParagraph>
 								By Signing Up, you agree to our
