@@ -30,7 +30,6 @@ export default class SignUp extends Component {
 		event.preventDefault();
 
 		const formData = { ...this.state };
-		console.log(formData);
 	};
 
 	changeHandler = ({ target }) => {
